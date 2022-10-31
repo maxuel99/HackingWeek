@@ -1,0 +1,204 @@
+@use "variables" as v;
+
+
+body {
+  position: relative;
+  .fc .fc-toolbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .fc .fc-popover {
+    z-index: 9998;
+  }
+  #calendar {
+    div.fc-popover-body{
+      background-image: linear-gradient(
+      to right bottom,
+      #175880,
+      #077ca0,
+      #18a2b9,
+      #43c8cc,
+      #77eed9,
+    );
+    }
+  }
+  .fc .fc-daygrid-day.fc-day-today{
+    background-color: #18a2b9;
+  }
+  .central_container_darken-bgc {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    figure {
+      img {
+        width: 4rem;
+      }
+      .rotating {
+        -webkit-animation: rotating 2s linear infinite;
+        -moz-animation: rotating 2s linear infinite;
+        -ms-animation: rotating 2s linear infinite;
+        -o-animation: rotating 2s linear infinite;
+        animation: rotating 2s linear infinite;
+      }
+    }
+  }
+  .calendar_pop-up {
+    position: absolute;
+    color: v.$True-White;
+    background-image: linear-gradient(
+      to left bottom,
+      #77eed9,
+      #43c8cc,
+      #18a2b9,
+      #077ca0,
+      #175880,
+    );
+    // border-radius: 1rem;
+    position: absolute;
+    width: 50%;
+    min-width: 400px;
+    max-width: 900px;
+    top: 10%;
+    left: -100%;
+    opacity: 1;
+    transform: translate(-50%);
+    box-shadow: 1px 3px 2px 2px rgba(0, 0, 0, 0.25);
+    z-index: 10000;
+    transition: left 0.35s ease-in-out;
+
+    &_container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+
+      &_cross {
+        position: absolute;
+        top: 2%;
+        right: 2%;
+        width: 1.5rem;
+        height: auto;
+        transition: box-shadow 0.15s ease-in-out;
+        &:hover {
+          cursor: pointer;
+          box-shadow: v.$Light-Blue 0px 22px 70px 40px;
+          overflow: visible;
+        }
+      }
+
+      &_title {
+        text-align: center;
+        font-size: 1.5rem;
+        padding-bottom: 1rem;
+        line-height: 1.8rem;
+      }
+      &_image {
+        // padding: 0.5rem 0;
+        img {
+          width: 100%;
+          max-width: 300px;
+          border-radius: 5px;
+          max-height: 200px;
+          height: auto;
+        }
+      }
+      &_summary {
+        font-size: 1.1rem;
+      }
+      &_publisher {
+        justify-self: flex-end;
+        display: flex;
+        justify-content: space-between;
+        // align-items: flex-end;
+        width: 100%;
+        // padding-top: 0.8rem;
+
+        &_link {
+          color: v.$True-White;
+          line-height: 1.2rem;
+
+          &:hover {
+            color: blue;
+          }
+        }
+
+        &_news-site {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}
+
+.calendar_pop-up--hidden {
+  opacity: 0;
+}
+
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+
+@media (max-width: 767px) {
+  body {
+    .calendar_pop-up {
+      min-width: 80%;
+      top: 3%;
+      &_container {
+        &_title {
+          font-size: 1.2rem;
+          padding: 0;
+        }
+        &_image {
+          img {
+            max-height: 140px;
+          }
+        &_summary {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+    .fc .fc-button {
+      padding: 0 0.15rem !important;
+    }
+    .fc .fc-popover {
+      max-width: 90%;
+      overflow: hidden;
+    }
+    .fc .fc-toolbar-title {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+@media (max-width: 479px) {
+  #calendar > div.fc-header-toolbar.fc-toolbar.fc-toolbar-ltr > div:nth-child(1) > button{
+    margin:0;
+  }
+  body {
+    .fc .fc-toolbar-title {
+      font-size: .7rem;
+    }
+  }
+}

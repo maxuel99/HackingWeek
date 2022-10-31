@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.2.0",
+    "chart.js": "^3.8.2",
+    "fullcalendar": "^5.11.2",
+    "hover.css": "^2.3.2"
+  }
+}

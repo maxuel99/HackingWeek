@@ -1,0 +1,309 @@
+@use "./style/css/variables" as v;
+@use "./style/css/calendar";
+@use "./style/css/calendar_buttons";
+
+ 
+.selector-for-some-widget {
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+#big_container {
+  display: flex;
+  height: 100%;
+  padding: 0;
+  position: relative;
+
+  .bottom_contaniner_menu {
+    background: #5368AF;
+    background: -webkit-linear-gradient(top left, #5368AF, #175880);
+    background: -moz-linear-gradient(top left, #5368AF, #175880);
+    background: linear-gradient(to bottom right, #5368AF, #175880);
+    height: 100%;
+    width: 15%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    .first_row1{
+      .bottom_contaniner_menu_buttons {
+        margin-top: 5px;
+        // width: 150px;
+        height: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        svg {
+          width: 50px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .central_contaniner {
+    background: #77EED9;
+    background: -webkit-linear-gradient(top left, #77EED9, #175880);
+    background: -moz-linear-gradient(top left, #77EED9, #175880);
+    background: linear-gradient(to bottom right, #77EED9, #175880);    width: 100%;
+    height: 100%;
+    max-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    #calendar {
+      padding-top: 1rem;
+      width: 100%;
+      height: 98%;
+      h2 {
+        color: white;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+
+    
+    .table{
+      width: 100%;
+      height: 95%;
+      flex-direction: column;
+      color: white;
+      thead {
+        display: flex;
+        tr {
+          display: flex;
+          width: 100%;
+          justify-content: space-evenly;
+          th {
+            width: 150px;
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+      tbody {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap:15px;
+        tr {
+          display: flex;
+          align-items: flex-start;
+          width: 100%;       
+          td{
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            border-style: none;
+          }
+          .tdImg {
+            display: flex;
+            justify-content: center;
+          }
+          .tdTitle {
+            display: flex;
+            max-height: 95.5px;
+            overflow-y: scroll;
+          }
+          .tdUrl {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            max-height: 95.5px;
+            a {
+              text-decoration: none;
+              color: white;
+              display: flex;
+              flex-direction: column;
+              word-wrap: break-word;
+              overflow-y: scroll;
+            }
+          }
+          .tdDate {
+            display: flex;
+            justify-content: center;
+            max-height: 95.5px;
+            word-wrap: break-word;
+          }
+        }
+      }
+    }
+  }
+  
+}
+
+.overflow--hidden{
+  overflow: hidden;
+}
+.visible {
+  display: flex !important;
+}
+
+
+.div-gigante {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  & .grafico_torta {
+    width: 40%;
+    // height: 50%;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1079.98px) {
+  .div-gigante{
+    flex-direction: column;
+    .grafico_torta{
+      width: 50%;
+    }
+  }
+}
+
+@media (max-width: 859.98px) {
+  .div-gigante{
+    .grafico_torta{
+      width: 70%;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  #big_container{
+    flex-direction: column;
+    .bottom_contaniner_menu {
+      width: 100%; 
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      .first_row1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 70%;
+        #testo{
+          display: none;
+        }
+        .bottom_contaniner_menu_buttons{
+          height: 100%;
+        }
+      }
+      .second_row2{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 30%;
+        #testo{
+          display: none;
+        }
+      }
+      
+    }
+  }
+  .div-gigante {
+    flex-direction: column;
+    .grafico_torta{
+      display: flex;
+      align-items: center;
+      width: 90%;
+    }
+  }
+}
+@media (max-width: 424.98px) {
+  #big_container{
+    flex-direction: column;
+    .bottom_contaniner_menu {
+
+      .first_row1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 70%;
+        #testo{
+          display: none;
+        }
+        .bottom_contaniner_menu_buttons{
+          height: 100%;
+        }
+      }
+      .second_row2{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 30%;
+        #testo{
+          display: none;
+        }
+      }
+      
+    }
+  }
+  .div-gigante {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 374.98px) {
+  #big_container{
+    flex-direction: column;
+    .bottom_contaniner_menu {
+
+      .first_row1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 70%;
+        #testo{
+          display: none;
+        }
+        .bottom_contaniner_menu_buttons{
+          height: 100%;
+        }
+      }
+      .second_row2{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 30%;
+        #testo{
+          display: none;
+        }
+      }
+      
+    }
+  }
+  .div-gigante {
+    flex-direction: column;
+    .grafico_torta{
+      display: flex;
+      align-items: center;
+      width: 90%;
+    }
+  }
+}

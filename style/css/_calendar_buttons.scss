@@ -1,0 +1,67 @@
+@use "variables" as v;
+
+
+#calendar > div.fc-header-toolbar.fc-toolbar.fc-toolbar-ltr > div:nth-child(1) > button:disabled{
+    background-color:  v.$Dark-Blue;
+}
+    
+#calendar > div.fc-header-toolbar.fc-toolbar.fc-toolbar-ltr > div:nth-child(1) > button:not(:disabled){
+    background-color:  none;
+    background-image: radial-gradient(circle, #77eed9, #43c8cc, #18a2b9, #077ca0, #175880);
+  transition: box-shadow 0.2s ease-in-out;
+  &:hover {
+    background-image: radial-gradient(
+      circle,
+      #175880,
+      #077ca0,
+      #18a2b9,
+      #43c8cc,
+      #77eed9
+    );
+    border-color: #175880;
+    box-shadow: #175880 0px 0px 70px 10px;
+  }
+}
+
+#calendar
+  > div.fc-header-toolbar.fc-toolbar.fc-toolbar-ltr
+  > div:nth-child(1)
+  > div
+  > button.fc-button.fc-button-primary {
+    background-image: radial-gradient(circle, #77eed9, #43c8cc, #18a2b9, #077ca0, #175880);
+  transition: box-shadow 0.2s ease-in-out;
+  &:hover {
+    background-image: radial-gradient(
+      circle,
+      #175880,
+      #077ca0,
+      #18a2b9,
+      #43c8cc,
+      #77eed9
+    );
+    border-color: #175880;
+    box-shadow: #175880 0px 0px 70px 10px;
+  }
+}
+
+#calendar > div.fc-header-toolbar.fc-toolbar.fc-toolbar-ltr > div:nth-child(3) > div > button:not(.fc-button-active){
+    background-color:  none;
+    background-image: radial-gradient(circle, #77eed9, #43c8cc, #18a2b9, #077ca0, #175880);
+  transition: box-shadow 0.2s ease-in-out;
+  &:hover {
+    background-image: radial-gradient(
+      circle,
+      #175880,
+      #077ca0,
+      #18a2b9,
+      #43c8cc,
+      #77eed9
+    );
+    border-color: #175880;
+    box-shadow: #175880 0px 0px 70px 10px;
+  }
+}
+
+#calendar > div.fc-header-toolbar.fc-toolbar.fc-toolbar-ltr > div:nth-child(3) > div > button.fc-button-active{
+    background-color:  v.$Dark-Blue;
+}
